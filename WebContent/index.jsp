@@ -1,1 +1,3 @@
-<jsp:forward page="GameServlet" />
+<script>
+   window.location="doc/index.html";
+</script>

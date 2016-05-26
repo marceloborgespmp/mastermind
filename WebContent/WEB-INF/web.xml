@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xmlns:web="http://java.sun.com/xml/ns/javaee" xmlns="http://java.sun.com/xml/ns/javaee" 
+xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" 
+id="WebApp_ID" version="2.5">
   <display-name>MasterMind Game</display-name>
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>
@@ -8,15 +11,25 @@
     <listener-class>mastermind.controller.DatabaseListener</listener-class>
   </listener>
   <servlet>
-      <servlet-name>MasterMind RESTful Application</servlet-name>
-      <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
-         <init-param>
-            <param-name>jersey.config.server.provider.packages</param-name>
-            <param-value>mastermind.services</param-value>
-         </init-param>
+    <servlet-name>MasterMind RESTful Application</servlet-name>
+    <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
+    <init-param>
+      <param-name>jersey.config.server.provider.packages</param-name>
+      <param-value>mastermind.services</param-value>
+    </init-param>
   </servlet>
-   <servlet-mapping>
-   	 <servlet-name>MasterMind RESTful Application</servlet-name>
-     <url-pattern>/rest/*</url-pattern>
-   </servlet-mapping>    
+  <servlet-mapping>
+    <servlet-name>MasterMind RESTful Application</servlet-name>
+    <url-pattern>/rest/*</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description>JAX-RS Tools Generated - Do not modify</description>
+    <servlet-name>JAX-RS Servlet</servlet-name>
+    <servlet-class></servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>JAX-RS Servlet</servlet-name>
+    <url-pattern>/jaxrs/*</url-pattern>
+  </servlet-mapping>
 </web-app>
